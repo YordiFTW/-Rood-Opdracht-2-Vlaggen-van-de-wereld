@@ -1,0 +1,89 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace FlagGame3
+{
+    public partial class Form2 : Form
+    {
+        int flagNumber = 1;
+        int flagNumberTotal = 244;
+
+
+
+        public Form2()
+        {
+            InitializeComponent();
+            askFlag(flagNumber);
+        }
+
+        private void spelenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 to = new Form2();
+            to.Show();
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            flagNumber++;
+            askFlag(flagNumber);
+        }
+
+        private void askFlag(int flagnum)
+        {
+            switch (flagnum)
+            {
+                case 1:
+                    pictureBox1.Image = Properties.Resources.Netherlands;
+                    label1.Text = "Nederland";
+
+                    break;
+
+                case 2:
+                    pictureBox1.Image = Properties.Resources.Brazil;
+                    label1.Text = "Brazilie";
+
+                    break;
+
+                case 3:
+                    pictureBox1.Image = Properties.Resources.Hungary;
+                    label1.Text = "Hongarije";
+
+                    break;
+
+
+
+            }
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            flagNumber--;
+            askFlag(flagNumber);
+        }
+    }
+}
